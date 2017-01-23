@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_signup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimary">
+
+
+    <!--<transport.com.grinasia.travel_transport.CustomViews.NonSwipeableViewPager
+        android:id="@+id/signUpView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />-->
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_back"
+        android:hint="@string/btn_back"
+        android:visibility="gone"
+        android:layout_gravity="right" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_next"
+        android:visibility="gone"
+        android:hint="@string/btn_next"
+        android:layout_gravity="left" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/begin"
+        android:background="#0000FF"
+        android:textSize="15dp"
+        android:textColorHint="@android:color/white"
+        android:visibility="gone"
+        android:id="@+id/btnstart"
+        android:layout_gravity="center|center"/>
+
+</LinearLayout>

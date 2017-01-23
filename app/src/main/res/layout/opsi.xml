@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app ="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_opsi">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".Setting">
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="130dp">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/notification1"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:layout_gravity="top"
+                android:paddingBottom="10dp"
+                android:layout_toLeftOf ="@+id/switch_btn"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentLeft="true" />
+            <Switch
+                android:id="@+id/switch_notification"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:checked="false"
+                android:paddingBottom="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:gravity="right"
+                android:textOff="No"
+                android:textColor="#3269ce"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:textOn="Yes"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/notifdata"
+                android:text="@string/data_notif1"
+                android:textSize="20dp"
+                android:textColor="@android:color/holo_blue_bright"
+                android:layout_marginTop="40dp"
+                android:paddingLeft="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtSignOut"
+                android:text="@string/sign_out1"
+                android:textSize="15dp"
+                android:textColor="@android:color/holo_blue_bright"
+                android:layout_marginTop="80dp"
+                android:paddingLeft="20dp"/>
+
+            <Button
+                android:id="@+id/sign_out"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/sign_out_data1"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="50dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentLeft="true" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

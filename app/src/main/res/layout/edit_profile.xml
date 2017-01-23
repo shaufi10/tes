@@ -1,0 +1,71 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/btn_profile1"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_shape"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/txtUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:layout_centerVertical="true"
+            android:text="@string/username"
+            android:textSize="15sp" />
+
+        <EditText
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ed_username"
+            android:text=""
+            android:layout_toRightOf="@+id/txtUser"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="30dp"
+            android:textSize="15sp"
+            android:text="@string/password1"
+            android:id="@+id/txtPassword_profile"
+            android:layout_below="@+id/txtUser"/>
+
+        <EditText
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ed_password_profile"
+            android:text=""
+            android:layout_marginTop="35dp"
+            android:layout_below="@+id/txtUser"
+            android:layout_toRightOf="@+id/txtPassword_profile"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+</RelativeLayout>

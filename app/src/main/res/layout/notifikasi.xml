@@ -1,0 +1,116 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app ="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_notification">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="top|center"
+        android:padding="16dp"
+        android:background="@drawable/rectangle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="top"
+            android:background="@drawable/rectangle">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Order_enter"
+                android:textSize="20sp"
+                android:gravity="top|center"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/darker_gray"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/date2"
+                android:textSize="15sp"
+                android:paddingTop="5dp"
+                android:id="@+id/date"
+                android:paddingLeft="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/time3"
+                android:textSize="15sp"
+                android:paddingTop="5dp"
+                android:id="@+id/time"
+                android:paddingLeft="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/location3"
+                android:textSize="15sp"
+                android:paddingTop="5dp"
+                android:id="@+id/lokasi"
+                android:paddingLeft="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/visi3"
+                android:textSize="15sp"
+                android:paddingTop="5dp"
+                android:id="@+id/tujuan"
+                android:paddingLeft="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/status3"
+                android:textSize="15sp"
+                android:paddingTop="5dp"
+                android:id="@+id/status"
+                android:paddingLeft="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/accept1"
+                    android:padding="20dp"
+                    android:hint="@string/accept1"
+                    android:background="#17ed70"
+                    android:layout_marginLeft="100dp"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reject"
+                    android:padding="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:background="#17ed70"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="10sp"
+                    android:hint="@string/reject1" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>
