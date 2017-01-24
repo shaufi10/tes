@@ -1,4 +1,4 @@
-package transport.com.grinasia.travel_transport.Fragments;
+package transport.com.grinasia.transport.Fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import transport.com.grinasia.travel_transport.Detail_Order_Aktif;
-import transport.com.grinasia.travel_transport.R;
+import transport.com.grinasia.transport.Detail_Order_Aktif;
+import transport.com.grinasia.transport.R;
 
 /**
  * Created by coder on 29-Dec-16.

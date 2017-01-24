@@ -3,27 +3,33 @@
     <string name="pswd">Password</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
+
     <string name="info">Silahkan Masukkan Username dan Password Anda</string>
     <string name="username">Username</string>
     <string name="pass">Password</string>
     <string name="pass_confirm">Confirm Password</string>
+
     <string name="btn_next">Selanjutnya</string>
+
     <string name="info2">Silahkan Masukkan Identitas Anda</string>
     <string name="nama">Nama</string>
     <string name="address_person">Alamat</string>
     <string name="number_telephone">Nomor Telepon</string>
     <string name="number_SIM">Nomor SIM B1/B2</string>
+
     <string name="info3">Hampir Selesai! Masukan Identitas Perusahaan Anda</string>
     <string name="kind_company">Jenis Perusahaan</string>
-    <string name="Nama_perusahaan">Nama Perusahaan</string>
-    <string name="Alamat_perusahaan">Alamat Perusahaan</string>
-    <string name="Nomor_Telepon">Nomor Telepon</string>
-    <string name="Nomor_akte">Nomor Akte</string>
-    <string name="Nomor_SIUP">Nomor SIUP</string>
-    <string name="Nomor_TDP">Nomor TDP</string>
-    <string name="Nomor_NPWP">Nomor NPWP</string>
+    <string name="name_company">Nama Perusahaan</string>
+    <string name="address_company">Alamat Perusahaan</string>
+    <string name="phone_company">Nomor Telepon</string>
+    <string name="number_akte">Nomor Akte</string>
+    <string name="number_SIUP">Nomor SIUP</string>
+    <string name="number_TDP">Nomor TDP</string>
+    <string name="number_NPWP">Nomor NPWP</string>
+
     <string name="info4">Anda Sudah Terdaftar Dalam Transport Apps! Fitur Transport Apps Telah Terserdia Untuk Anda</string>
     <string name="begin">Mulai</string>
+
     <string name="home">Beranda</string>
     <string name="order">Order Aktif</string>
     <string name="date">Tanggal Order :</string>
@@ -38,37 +44,61 @@
     <string name="status_history">Status :</string>
     <string name="status_history1">Status :</string>
     <string name="view_more">View More</string>
+
     <string name="profile">Profile</string>
     <string name="user_profile">username</string>
     <string name="pass_profile">Password</string>
     <string name="data_profile">********</string>
     <string name="data_profil">********</string>
-    <string name="notif1">Notifikasi</string>
+
+    <string name="notification">Notifikasi</string>
     <string name="Order_enter">Order Masuk</string>
-    <string name="date2">Tanggal Order :</string>
-    <string name="time2">Jam Order :</string>
-    <string name="location2">Lokasi Penjemputan :</string>
-    <string name="visi2">\"Tujuan :</string>
-    <string name="status2">Status Order :</string>
-    <string name="accept1">Accept Order</string>
-    <string name="reject1">Reject Order</string>
-    <string name="information1">Informasi</string>
-    <string name="Opsi1">Opsi</string>
+    <string name="date_enter">Tanggal Order :</string>
+    <string name="time_enter">Jam Order :</string>
+    <string name="location_enter">Lokasi Penjemputan :</string>
+    <string name="visi_enter">\"Tujuan :</string>
+    <string name="status_enter">Status Order :</string>
+    <string name="accept_enter">Accept Order</string>
+    <string name="reject_enter">Reject Order</string>
+
+
+    <string name="Opsi">Opsi</string>
+    <string name="notification_Data">Notification Data</string>
+    <string name="data_notif">Notification data currently</string>
+    <string name="sign_out">Sign Out My Account</string>
+    <string name="sign_out_data">SIGN OUT</string>
+
+    <string name="detailorder">Detail Order Aktif</string>
     <string name="arrived_confirm">Arrived Confirm</string>
-    <string name="date_1">Tanggal Order :</string>
-    <string name="time_1">Jam Order :</string>
-    <string name="location3">Lokasi Penjemputan :</string>
-    <string name="visi3">Tujuan :</string>
-    <string name="status4">Status Order :</string>
-    <string name="date3">Tanggal Order :</string>
-    <string name="time3">Jam Order</string>
-    <string name="status3">Status Order</string>
-    <string name="notification1">Notification Data</string>
-    <string name="data_notif1">Notification data currently</string>
-    <string name="sign_out1">Sign Out My Account</string>
-    <string name="sign_out_data1">SIGN OUT</string>
-    <string name="password1">Password</string>
+    <string name="date_confirm">Tanggal Order :</string>
+    <string name="time_confirm">Jam Order :</string>
+    <string name="location_confirm">Lokasi Penjemputan :</string>
+    <string name="visi_confirm">Tujuan :</string>
+    <string name="status_confirm">Status Order :</string>
+
+    <string name="information">Informasi</string>
     <string name="title2">About as Application</string>
     <string name="btn_back">Back</string>
-    <string name="detail_order">Detail Order Aktif</string>
+
+    <string name="Username_profile">Username</string>
+    <string name="User_password">Password</string>
+
+    <string name="company">Jenis Perusahaan</string>
+    <style name="kind_company">Pilih Jenis Perusahaan</style>
+
+    <string-array name="list_kind_company">
+        <item>Perorangan</item>
+        <item>Perusahaan</item>
+    </string-array>
+
+    <string name="enter_activation_code">Kami telah mengirimkan kode aktivasi ke email anda! \n \n Masukkan kode aktivasi anda disini: </string>
+    <string name="activation_code_hint">Kode Aktivasi</string>
+    <string name="activate_my_account_btn">Aktifkan akun saya</string>
+
+    <string name="tos">Ketentuan Layanan</string>
+    <string name="tos_label">Saya telah membaca dan setuju pada</string>
+    <string name="tos_label_2">Ketentuan Layanan</string>
+    <string name="close_btn">Tutup</string>
+
+    <string name="finished_registration_text">Dengan menyelesaikan proses pendaftaran, anda bersedia untuk patuh terhadap Ketentuan Layanan Kami dan hasil pelanggaran apapun terhadap Ketentuan Layanan akan menyebabkan akun anda dihapus dari sistem</string>
 </resources>

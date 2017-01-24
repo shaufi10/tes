@@ -1,4 +1,4 @@
-package transport.com.grinasia.travel_transport.Fragments;
+package transport.com.grinasia.transport.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +12,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import transport.com.grinasia.travel_transport.LoginActivity;
-import transport.com.grinasia.travel_transport.R;
+import transport.com.grinasia.transport.LoginActivity;
+import transport.com.grinasia.transport.R;
 
 /**
  * Created by coder on 29-Dec-16.

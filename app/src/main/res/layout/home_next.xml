@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/detail_order"
+            android:text="@string/detailorder"
             android:textColor="@android:color/white"
             android:textSize="20sp"/>
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:layout_gravity="top|center"
         android:padding="16dp"
         android:background="@drawable/rectangle">
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/date3"
+                android:text="@string/date_confirm"
                 android:textSize="15sp"
                 android:paddingTop="5dp"
                 android:id="@+id/date"
@@ -55,7 +55,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/time2"
+                android:text="@string/time_confirm"
                 android:textSize="15sp"
                 android:paddingTop="5dp"
                 android:id="@+id/time"
@@ -64,7 +64,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/location3"
+                android:text="@string/location_confirm"
                 android:textSize="15sp"
                 android:paddingTop="5dp"
                 android:id="@+id/lokasi"
@@ -73,7 +73,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/visi3"
+                android:text="@string/visi_confirm"
                 android:textSize="15sp"
                 android:paddingTop="5dp"
                 android:id="@+id/tujuan"
@@ -82,7 +82,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/status2"
+                android:text="@string/status_confirm"
                 android:textSize="15sp"
                 android:paddingTop="5dp"
                 android:id="@+id/status"

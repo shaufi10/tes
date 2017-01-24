@@ -3,49 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_register_2"
+    tools:context="">
 
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:fillViewport="false">
 
         <LinearLayout
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/txtInfo1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:textColor="@android:color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
                 android:text="@string/info3"
                 android:textSize="15sp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="100dp"
-                android:layout_marginTop="100dp"
-                android:gravity="center"
+                android:layout_margin="50dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:text="@string/kind_company"
-                    android:textColor="#CD2134"
+                    android:text="@string/company"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/spinner1"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:entries="@array/list_kind_company" />
 
             </LinearLayout>
 
@@ -59,16 +64,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="@android:color/white"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="5dp"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/Nama_perusahaan"
+                        android:hint="@string/name_company"
                         android:inputType="textPersonName"
                         android:maxLines="1"
-                        android:maxLength="50"
+                        android:textSize="15sp"
                         android:id="@+id/edName_Company"
                         android:textColor="@android:color/white"/>
 
@@ -78,17 +83,17 @@
                     android:id="@+id/txtInputAddress_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="5dp"
                     android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/Alamat_perusahaan"
+                        android:hint="@string/address_company"
                         android:inputType="text"
                         android:maxLines="1"
-                        android:maxLength="50"
+                        android:textSize="15sp"
                         android:textColor="@android:color/white"
                         android:id="@+id/edAddress_Company" />
 
@@ -98,16 +103,18 @@
                     android:id="@+id/txtInputPhone_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="5dp"
                     android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/Nomor_Telepon"
+                        android:hint="@string/phone_company"
                         android:id="@+id/edNumber_telephone_Company"
                         android:inputType="phone"
+                        android:textSize="15sp"
+                        android:textColor="@android:color/white"
                         android:layout_gravity="top|left"/>
 
                 </android.support.design.widget.TextInputLayout>
@@ -116,16 +123,16 @@
                     android:id="@+id/txtInputNumber_Akte"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="5dp"
                     android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/Nomor_akte"
+                        android:hint="@string/number_akte"
                         android:inputType="text"
-                        android:maxLength="255"
+                        android:textSize="15sp"
                         android:id="@+id/edNumber_Akte"
                         android:textColor="@android:color/white"/>
 
@@ -135,15 +142,16 @@
                     android:id="@+id/txtInputNumberSIUP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="5dp"
                     android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/Nomor_SIUP"
+                        android:hint="@string/number_SIUP"
                         android:inputType="text"
+                        android:textSize="15sp"
                         android:id="@+id/edNumber_SIUP"
                         android:textColor="@android:color/white"/>
 
@@ -153,17 +161,18 @@
                     android:id="@+id/txtInputNumberTDP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="5dp"
                     android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/Nomor_TDP"
+                        android:hint="@string/number_TDP"
                         android:maxLines="1"
-                        android:maxLength="50"
+                        android:textSize="15sp"
                         android:inputType="text"
+                        android:textColor="@android:color/white"
                         android:id="@+id/edNumber_TDP"
                         android:layout_gravity="top|left"/>
 
@@ -173,35 +182,23 @@
                     android:id="@+id/txtInputNumberNPWP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:textColor="@android:color/white"
+                    android:layout_marginTop="5dp"
+                    android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/Nomor_NPWP"
-                        android:maxLength="255"
+                        android:hint="@string/number_NPWP"
+                        android:maxLines="1"
+                        android:textSize="15sp"
                         android:inputType="text"
                         android:id="@+id/edNumber_NPWP"
                         android:textColor="@android:color/white"/>
 
                 </android.support.design.widget.TextInputLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:orientation="horizontal">
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/btn_back"
-                        android:hint="@string/btn_back"
-                        android:layout_gravity="right" />
-
-                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
 </FrameLayout>

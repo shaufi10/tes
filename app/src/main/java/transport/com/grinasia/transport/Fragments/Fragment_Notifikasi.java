@@ -1,4 +1,4 @@
-package transport.com.grinasia.travel_transport.Fragments;
+package transport.com.grinasia.transport.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import transport.com.grinasia.travel_transport.R;
+import transport.com.grinasia.transport.R;
 
 /**
  * Created by coder on 29-Dec-16.

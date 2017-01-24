@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_gravity="top|center"
             android:padding="5dp"
             android:background="@drawable/rectangle">
@@ -49,10 +49,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/time"
-                    android:textSize="10sp"
+                    android:textSize="15sp"
                     android:paddingTop="5dp"
                     android:id="@+id/time"
                     android:paddingLeft="30dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -85,8 +86,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/detail"
-                    android:padding="20dp"
-                    android:layout_marginBottom="50dp"
+                    android:padding="5dp"
+                    android:layout_marginBottom="20dp"
                     android:hint="@string/detail"
                     android:background="#17ed70"
                     android:layout_marginLeft="30dp"
@@ -109,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:layout_gravity="bottom"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="270dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:padding="16dp">
@@ -170,17 +171,16 @@
                     android:layout_height="wrap_content"
                     android:text="@string/status_history1"
                     android:textSize="15sp"
-                    android:layout_marginBottom="50dp"
+                    android:layout_marginBottom="10dp"
                     android:paddingLeft="30dp"/>
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="20dp"
                     android:hint="@string/view_more"
                     android:layout_marginRight="30dp"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="5dp"
                     android:textColorHint="#FFFFFF"
                     android:background="#17ed70"/>
             </LinearLayout>

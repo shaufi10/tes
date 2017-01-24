@@ -1,4 +1,4 @@
-package transport.com.grinasia.travel_transport;
+package transport.com.grinasia.transport;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -6,12 +6,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import transport.com.grinasia.travel_transport.Adapter.ViewPagerAdapter1;
-import transport.com.grinasia.travel_transport.Fragments.Fragment_Home;
-import transport.com.grinasia.travel_transport.Fragments.Fragment_Informasi;
-import transport.com.grinasia.travel_transport.Fragments.Fragment_Notifikasi;
-import transport.com.grinasia.travel_transport.Fragments.Fragment_Opsi;
-import transport.com.grinasia.travel_transport.Fragments.Fragment_Profile;
+import transport.com.grinasia.transport.Adapter.ViewPagerAdapter1;
+import transport.com.grinasia.transport.Fragments.Fragment_Home;
+import transport.com.grinasia.transport.Fragments.Fragment_Informasi;
+import transport.com.grinasia.transport.Fragments.Fragment_Notifikasi;
+import transport.com.grinasia.transport.Fragments.Fragment_Opsi;
+import transport.com.grinasia.transport.Fragments.Fragment_Profile;
 
 public class MainActivity extends AppCompatActivity {
 
