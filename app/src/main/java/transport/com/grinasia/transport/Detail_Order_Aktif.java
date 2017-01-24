@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBarActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -20,6 +21,10 @@ public class Detail_Order_Aktif extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_next);
 
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+
         Arrived = (Button) findViewById(R.id.accept);
 
         Arrived.setOnClickListener(new View.OnClickListener() {
@@ -29,5 +34,16 @@ public class Detail_Order_Aktif extends ActionBarActivity {
                 startActivity(a);
             }
         });
+    }
+
+    @Override
+    public  boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                this.finish();
+                return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 }
