@@ -11,7 +11,7 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical"
     android:gravity="center_vertical"
-    tools:context="transport.com.grinasia.transport.AccountActivationActivity">
+    tools:context="com.grinasia.transport.AccountActivationActivity">
 
     <TextView
         android:layout_width="match_parent"

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="transport.com.grinasia.transport.Fragments.ConfirmTOSFragment">
+    tools:context="com.grinasia.transport.Fragments.ConfirmTOSFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
