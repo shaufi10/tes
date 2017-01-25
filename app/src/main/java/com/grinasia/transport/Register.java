@@ -23,8 +23,8 @@ import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.grinasia.transport.Adapter.SignupViewPagerAdapter;
 import com.grinasia.transport.Config.BaseConfig;
+import com.grinasia.transport.Fragments.ConfirmTOSFragment;
 import com.grinasia.transport.Fragments.Fragment_Register;
-import com.grinasia.transport.Fragments.Register_finish;
 import com.grinasia.transport.Fragments.Register_next;
 import com.grinasia.transport.Fragments.Register_next_after;
 import com.grinasia.transport.Service.VolleyServices;
@@ -49,6 +49,9 @@ public class Register  extends AppCompatActivity{
     private ViewPager signUpViewPager;
     private Button Next, Back, Mulai;
     private Spinner spinner;
+
+    private String username, password, nama, address, phone_number, nomor_sim, name_company,
+            address_company, phone_company, number_akte, number_SIUP, number_TDP, number_NPWP;
 
     private VolleyCallback volleyCallback;
     private VolleyServices volleyServices;
@@ -125,17 +128,22 @@ public class Register  extends AppCompatActivity{
                     JSONObject dataUserProfile = new JSONObject();
 
                     try {
-                        //dataUser.put("username", username);
-                        //dataUser.put("password", password);
-                        //dataUser.put("status", 0);
+                        dataUser.put("username", username);
+                        dataUser.put("password", password);
+                        dataUser.put("status", 0);
 
-                        //dataUserProfile.put("", firstName);
-                        //dataUserProfile.put("", lastName);
-                        //dataUserProfile.put("", address);
-                        //dataUserProfile.put("", dob);
-                        //dataUserProfile.put("", occupation);
-                        //dataUserProfile.put("", emailAddress);
-                        //dataUserProfile.put("", phoneNumber);
+                        dataUserProfile.put("", nama);
+                        dataUserProfile.put("", address);
+                        dataUserProfile.put("", phone_number);
+                        dataUserProfile.put("", nomor_sim);
+
+                        dataUserProfile.put("", name_company);
+                        dataUserProfile.put("", address_company);
+                        dataUserProfile.put("", phone_company);
+                        dataUserProfile.put("", number_akte);
+                        dataUserProfile.put("", number_SIUP);
+                        dataUserProfile.put("", number_TDP);
+                        dataUserProfile.put("", number_NPWP);
 
                         dataUser.put("user_profile", dataUserProfile);
 
@@ -179,7 +187,7 @@ public class Register  extends AppCompatActivity{
         adapter.addFragment(new Fragment_Register());
         adapter.addFragment(new Register_next());
         adapter.addFragment(new Register_next_after());
-        adapter.addFragment(new Register_finish());
+        adapter.addFragment(new ConfirmTOSFragment());
         viewPager.setAdapter(adapter);
     }
 
@@ -218,7 +226,7 @@ public class Register  extends AppCompatActivity{
                     showValidationErrorMessage(txtLayoutConfirmPassword, txtConfirmPassword, "Password do not match");
                     return;
                 } else {
-                    if (txtPassword.getText().toString().length() < 8){
+                    if (txtPassword.getText().toString().length() < 6){
                         showValidationErrorMessage(txtLayoutPassword, txtPassword, "Password must be minimum 8 character");
                         return;
                     }

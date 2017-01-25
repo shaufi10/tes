@@ -40,7 +40,7 @@
                     android:maxLines="1"
                     android:inputType="textPersonName"
                     android:id="@+id/edUser"
-                    android:textColorHint="@android:color/white" />
+                    android:textColor="@android:color/white" />
 
             </android.support.design.widget.TextInputLayout>
 

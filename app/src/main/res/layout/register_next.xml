@@ -23,8 +23,7 @@
             android:textAlignment="center"
             android:padding="20dp"
             android:textSize="15sp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentTop="true" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,7 +49,7 @@
                     android:hint="@string/nama"
                     android:inputType="textPersonName"
                     android:id="@+id/edName"
-                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/white"
                     android:layout_centerHorizontal="true" />
 
             </android.support.design.widget.TextInputLayout>
@@ -66,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/address_person"
                     android:inputType="text"
-                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/white"
                     android:layout_gravity="top|left"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/edAddress" />
@@ -83,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/number_telephone"
-                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/white"
                     android:id="@+id/edNumber_telephone"
                     android:inputType="phone"
                     android:layout_gravity="top|left"/>
@@ -100,7 +99,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/number_SIM"
-                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/white"
                     android:inputType="phone"
                     android:id="@+id/edSIM_phone"
                     android:layout_gravity="top|left"/>

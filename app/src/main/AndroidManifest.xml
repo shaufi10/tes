@@ -11,13 +11,18 @@
         android:label=""
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name="com.grinasia.transport.MainActivity">
+        <activity android:name="com.grinasia.transport.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.grinasia.transport.Register"></activity>
+        <activity android:name="com.grinasia.transport.AccountActivationActivity"></activity>
+        <activity android:name="com.grinasia.transport.MainActivity"></activity>
+        <activity android:name="com.grinasia.transport.Detail_Order_Aktif"></activity>
+        <activity android:name="com.grinasia.transport.EditProfile"></activity>
     </application>
 
 </manifest>
