@@ -101,4 +101,5 @@
     <string name="close_btn">Tutup</string>
 
     <string name="finished_registration_text">Dengan menyelesaikan proses pendaftaran, anda bersedia untuk patuh terhadap Ketentuan Layanan Kami dan hasil pelanggaran apapun terhadap Ketentuan Layanan akan menyebabkan akun anda dihapus dari sistem</string>
+    <string name="upload_file">Upload File</string>
 </resources>
