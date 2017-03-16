@@ -102,4 +102,9 @@
 
     <string name="finished_registration_text">Dengan menyelesaikan proses pendaftaran, anda bersedia untuk patuh terhadap Ketentuan Layanan Kami dan hasil pelanggaran apapun terhadap Ketentuan Layanan akan menyebabkan akun anda dihapus dari sistem</string>
     <string name="upload_file">Upload File</string>
+    <string name="kotamadya">Kotamadya</string>
+    <string name="email_address">Alamat Surei (Email)</string>
+    <string name="firstName">Nama Depan</string>
+    <string name="lastName">Nama Belakang</string>
+    <string name="date_of_birth">Tanggal lahir</string>
 </resources>

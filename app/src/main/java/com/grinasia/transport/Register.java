@@ -50,7 +50,7 @@ public class Register  extends AppCompatActivity{
     private Button Next, Back, Mulai;
     private Spinner spinner;
 
-    private String username, password, nama, address, phone_number, nomor_sim, name_company,
+    private String wilayah, email, username, password, firstname, lastname, address, phone_number, nomor_sim, name_company,
             address_company, phone_company, number_akte, number_SIUP, number_TDP, number_NPWP;
 
     private VolleyCallback volleyCallback;
@@ -128,22 +128,25 @@ public class Register  extends AppCompatActivity{
                     JSONObject dataUserProfile = new JSONObject();
 
                     try {
+                        dataUser.put("Wilayah", wilayah);
+                        dataUser.put("Email", email);
                         dataUser.put("username", username);
                         dataUser.put("password", password);
                         dataUser.put("status", 0);
 
-                        dataUserProfile.put("", nama);
-                        dataUserProfile.put("", address);
-                        dataUserProfile.put("", phone_number);
-                        dataUserProfile.put("", nomor_sim);
+                        dataUserProfile.put("Nama Depan", firstname);
+                        dataUserProfile.put("Nama Belakang", lastname);
+                        dataUserProfile.put("Alamat", address);
+                        dataUserProfile.put("No. HP", phone_number);
+                        dataUserProfile.put("No. SIM", nomor_sim);
 
-                        dataUserProfile.put("", name_company);
-                        dataUserProfile.put("", address_company);
-                        dataUserProfile.put("", phone_company);
-                        dataUserProfile.put("", number_akte);
-                        dataUserProfile.put("", number_SIUP);
-                        dataUserProfile.put("", number_TDP);
-                        dataUserProfile.put("", number_NPWP);
+                        dataUserProfile.put("Nama Perusahaan", name_company);
+                        dataUserProfile.put("Alamat Perusahaan", address_company);
+                        dataUserProfile.put("No.HP Perusahaan", phone_company);
+                        dataUserProfile.put("No. Akte", number_akte);
+                        dataUserProfile.put("No. SIUP", number_SIUP);
+                        dataUserProfile.put("No. TDP", number_TDP);
+                        dataUserProfile.put("No. NPWP", number_NPWP);
 
                         dataUser.put("user_profile", dataUserProfile);
 
@@ -194,20 +197,35 @@ public class Register  extends AppCompatActivity{
     private void validateUserInput(int viewPagerPosition){
         if (viewPagerPosition == 0) {
 
+            TextInputLayout txtLayoutRegion = (TextInputLayout) findViewById(R.id.txtInputKotamadya);
+            TextInputLayout txtLayoutEmail = (TextInputLayout) findViewById(R.id.txtInputEmailAddress);
             TextInputLayout txtLayoutUsername = (TextInputLayout) findViewById(R.id.txtInputUserName);
             TextInputLayout txtLayoutPassword = (TextInputLayout) findViewById(R.id.txtInputPassword);
             TextInputLayout txtLayoutConfirmPassword = (TextInputLayout) findViewById(R.id.txtInputConfirmPassword);
 
+            txtLayoutRegion.setErrorEnabled(false);
+            txtLayoutEmail.setErrorEnabled(false);
             txtLayoutUsername.setErrorEnabled(false);
             txtLayoutPassword.setErrorEnabled(false);
             txtLayoutConfirmPassword.setErrorEnabled(false);
 
+            EditText txtRegion = (EditText) findViewById(R.id.edKotamadya);
+            EditText txtEmail = (EditText) findViewById(R.id.edEmailAddress);
             EditText txtUser = (EditText) findViewById(R.id.edUser);
             EditText txtPassword = (EditText) findViewById(R.id.edPassword);
             EditText txtConfirmPassword = (EditText) findViewById(R.id.edConfirmPassword);
 
-            if (TextUtils.isEmpty(txtUser.getText().toString()) || TextUtils.isEmpty(txtPassword.getText().toString())
+            if (TextUtils.isEmpty(txtRegion.getText().toString()) ||
+                    TextUtils.isEmpty(txtEmail.getText().toString()) ||
+                    TextUtils.isEmpty(txtUser.getText().toString()) ||
+                    TextUtils.isEmpty(txtPassword.getText().toString())
                     || TextUtils.isEmpty(txtConfirmPassword.getText().toString())){
+                if (TextUtils.isEmpty(txtRegion.getText().toString())) {
+                    showValidationErrorMessage(txtLayoutRegion, txtRegion, "Region is required");
+                }
+                if (TextUtils.isEmpty(txtEmail.getText().toString())) {
+                    showValidationErrorMessage(txtLayoutEmail, txtEmail, "Email Address is required");
+                }
                 if (TextUtils.isEmpty(txtUser.getText().toString())){
                     showValidationErrorMessage(txtLayoutUsername, txtUser, "Username is required");
                 }
@@ -241,36 +259,44 @@ public class Register  extends AppCompatActivity{
             signUpViewPager.setCurrentItem(viewPagerPosition + 1);
         } else if (viewPagerPosition == 1) {
 
-            TextInputLayout txtLayoutNama = (TextInputLayout) findViewById(R.id.txtInputName);
+            TextInputLayout txtLayoutFirstName = (TextInputLayout) findViewById(R.id.txtInputFirstName);
+            TextInputLayout txtLayoutLastName = (TextInputLayout) findViewById(R.id.txtInputLastName);
             TextInputLayout txtLayoutAlamat = (TextInputLayout) findViewById(R.id.txtInputAddress);
             TextInputLayout txtLayoutNomor = (TextInputLayout) findViewById(R.id.txtInputPhone);
-            TextInputLayout txtLayoutSIM = (TextInputLayout) findViewById(R.id.txtInputPhoneSIM);
+            TextInputLayout txtLayoutSIM = (TextInputLayout) findViewById(R.id.txtInputSIM);
 
-            txtLayoutNama.setErrorEnabled(false);
+            txtLayoutFirstName.setErrorEnabled(false);
+            txtLayoutLastName.setErrorEnabled(false);
             txtLayoutAlamat.setErrorEnabled(false);
             txtLayoutNomor.setErrorEnabled(false);
             txtLayoutSIM.setErrorEnabled(false);
 
-            EditText txtUsername = (EditText) findViewById(R.id.edName);
+            EditText txtFirstname = (EditText) findViewById(R.id.edFirstName);
+            EditText txtLastname = (EditText) findViewById(R.id.edLastName);
             EditText txtAlamat = (EditText) findViewById(R.id.edAddress);
             EditText txtNumberTelepon = (EditText) findViewById(R.id.edNumber_telephone);
             EditText txtSIM = (EditText) findViewById(R.id.edSIM_phone);
 
-            if (TextUtils.isEmpty(txtUsername.getText().toString()) || TextUtils.isEmpty(txtAlamat.getText().toString())
-                    || TextUtils.isEmpty(txtNumberTelepon.getText().toString())|| TextUtils.isEmpty(txtSIM.getText().toString())){
+            if (TextUtils.isEmpty(txtFirstname.getText().toString()) ||
+                    TextUtils.isEmpty(txtLastname.getText().toString()) ||
+                    TextUtils.isEmpty(txtAlamat.getText().toString())
+                    || TextUtils.isEmpty(txtNumberTelepon.getText().toString())
+                    || TextUtils.isEmpty(txtSIM.getText().toString())){
 
-                if (TextUtils.isEmpty(txtUsername.getText().toString())){
-                    showValidationErrorMessage(txtLayoutNama, txtUsername, "Username is required");
+                if (TextUtils.isEmpty(txtFirstname.getText().toString())){
+                    showValidationErrorMessage(txtLayoutFirstName, txtFirstname, "First Name is required");
+                }
+                if (TextUtils.isEmpty(txtLastname.getText().toString())){
+                    showValidationErrorMessage(txtLayoutLastName, txtLastname, "Last Name is required");
                 }
                 if (TextUtils.isEmpty(txtAlamat.getText().toString())){
-                    showValidationErrorMessage(txtLayoutAlamat, txtAlamat, "Password is required");
+                    showValidationErrorMessage(txtLayoutAlamat, txtAlamat, "Address is required");
                 }
-
                 if (TextUtils.isEmpty(txtNumberTelepon.getText().toString())){
                     showValidationErrorMessage(txtLayoutNomor, txtNumberTelepon, "Number Telephone is required");
                 }
                 if (TextUtils.isEmpty(txtSIM.getText().toString())){
-                    showValidationErrorMessage(txtLayoutSIM, txtSIM, "Number Phone SIM is required");
+                    showValidationErrorMessage(txtLayoutSIM, txtSIM, "SIM Number is required");
                 }
 
                 return;
