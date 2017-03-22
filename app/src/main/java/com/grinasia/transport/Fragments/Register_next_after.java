@@ -92,15 +92,6 @@ public class Register_next_after extends Fragment {
         btn_Number_TDP = (Button) view.findViewById(R.id.btn_upload_TDP);
         btn_Number_NPWP = (Button) view.findViewById(R.id.btn_upload_NPWP);
 
-        List<String> kind_company = new ArrayList<>();
-        kind_company.add("Perorangan");
-        kind_company.add("Perusahaan");
-
-        ArrayAdapter<String> kindcompanyaAdapter = new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_spinner_item, kind_company);
-        kindcompanyaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        Spn_kind_company.setAdapter(kindcompanyaAdapter);
-
         sharedPreferencesUtils = new SharedPreferencesUtils(getActivity(), "UserFile");
 
         retrofit = new Retrofit.Builder()
@@ -150,7 +141,7 @@ public class Register_next_after extends Fragment {
 
         uploadingState = true;
 
-        UploadProgressRequestBody reqFile = new UploadProgressRequestBody(imgFile, getActivity());
+        UploadProgressRequestBody reqFile = new UploadProgressRequestBody(imgFile, (UploadProgressRequestBody.UploadCallbacks) getActivity());
         MultipartBody.Part bodyImage = MultipartBody.Part.createFormData("userFile", imgFile.getName(), reqFile);
         RequestBody name = RequestBody.create(MediaType.parse("text/plain"), "Upload User File");
 

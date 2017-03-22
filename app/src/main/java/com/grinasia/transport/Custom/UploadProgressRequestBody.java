@@ -35,7 +35,7 @@ public class UploadProgressRequestBody extends RequestBody {
         //void onFinish();
     }
 
-    public UploadProgressRequestBody(final File file, final FragmentActivity listener) {
+    public UploadProgressRequestBody(final File file, final UploadCallbacks listener) {
         mFile = file;
         mListener = listener;
     }

@@ -304,46 +304,42 @@ public class Register  extends AppCompatActivity{
             }
 
             signUpViewPager.setCurrentItem(viewPagerPosition + 1);
+                } else if (viewPagerPosition == 2){
+                final TextInputLayout txtLayoutName_Company = (TextInputLayout) findViewById(R.id.txtInputName_company);
+                TextInputLayout txtLayoutAddress_Company = (TextInputLayout) findViewById(R.id.txtInputAddress_company);
+                TextInputLayout txtLayoutNumber_Company = (TextInputLayout) findViewById(R.id.txtInputPhone_company);
+                TextInputLayout txtLayoutNumberAkte = (TextInputLayout) findViewById(R.id.txtInputNumber_Akte);
+                TextInputLayout txtLayoutNumberSIUP = (TextInputLayout) findViewById(R.id.txtInputNumberSIUP);
+                TextInputLayout txtLayoutNumberTDP = (TextInputLayout) findViewById(R.id.txtInputNumberTDP);
+                TextInputLayout txtLayoutNumberNPWP = (TextInputLayout) findViewById(R.id.txtInputNumberNPWP);
 
+                txtLayoutName_Company.setErrorEnabled(false);
+                txtLayoutAddress_Company.setErrorEnabled(false);
+                txtLayoutNumber_Company.setErrorEnabled(false);
+                txtLayoutNumberAkte.setErrorEnabled(false);
+                txtLayoutNumberSIUP.setErrorEnabled(false);
+                txtLayoutNumberTDP.setErrorEnabled(false);
+                txtLayoutNumberNPWP.setErrorEnabled(false);
 
+                final EditText txtNama_Company = (EditText) findViewById(R.id.edName_Company);
+                final EditText txtAlamat_Company = (EditText) findViewById(R.id.edAddress_Company);
+                final EditText txtTelepon_Company= (EditText) findViewById(R.id.edNumber_telephone);
+                final EditText txtNumber_Akte = (EditText) findViewById(R.id.edNumber_Akte);
+                final EditText txtNumber_SIUP = (EditText) findViewById(R.id.edNumber_SIUP);
+                final EditText txtNumber_TDP = (EditText) findViewById(R.id.edNumber_TDP);
+                final EditText txtNumber_NPWP = (EditText) findViewById(R.id.edNumber_NPWP);
 
-        } else if (viewPagerPosition == 2){
+                spinner = (Spinner) findViewById(R.id.spn_kind_company);
 
-            final TextInputLayout txtLayoutName_Company = (TextInputLayout) findViewById(R.id.txtInputName_company);
-            TextInputLayout txtLayoutAddress_Company = (TextInputLayout) findViewById(R.id.txtInputAddress_company);
-            TextInputLayout txtLayoutNumber_Company = (TextInputLayout) findViewById(R.id.txtInputPhone_company);
-            TextInputLayout txtLayoutNumberAkte = (TextInputLayout) findViewById(R.id.txtInputNumber_Akte);
-            TextInputLayout txtLayoutNumberSIUP = (TextInputLayout) findViewById(R.id.txtInputNumberSIUP);
-            TextInputLayout txtLayoutNumberTDP = (TextInputLayout) findViewById(R.id.txtInputNumberTDP);
-            TextInputLayout txtLayoutNumberNPWP = (TextInputLayout) findViewById(R.id.txtInputNumberNPWP);
+                List<String> list = new ArrayList<>();
+                list.add("Perorangan");
+                list.add("Perusahaan");
 
-            txtLayoutName_Company.setErrorEnabled(false);
-            txtLayoutAddress_Company.setErrorEnabled(false);
-            txtLayoutNumber_Company.setErrorEnabled(false);
-            txtLayoutNumberAkte.setErrorEnabled(false);
-            txtLayoutNumberSIUP.setErrorEnabled(false);
-            txtLayoutNumberTDP.setErrorEnabled(false);
-            txtLayoutNumberNPWP.setErrorEnabled(false);
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(dataAdapter);
 
-            final EditText txtNama_Company = (EditText) findViewById(R.id.edName_Company);
-            final EditText txtAlamat_Company = (EditText) findViewById(R.id.edAddress_Company);
-            final EditText txtTelepon_Company= (EditText) findViewById(R.id.edNumber_telephone);
-            final EditText txtNumber_Akte = (EditText) findViewById(R.id.edNumber_Akte);
-            final EditText txtNumber_SIUP = (EditText) findViewById(R.id.edNumber_SIUP);
-            final EditText txtNumber_TDP = (EditText) findViewById(R.id.edNumber_TDP);
-            final EditText txtNumber_NPWP = (EditText) findViewById(R.id.edNumber_NPWP);
-
-            spinner = (Spinner) findViewById(R.id.spn_kind_company);
-
-            List<String> list = new ArrayList<>();
-            list.add("Perorangan");
-            list.add("Perusahaan");
-
-            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
-            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(dataAdapter);
-
-            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     if(spinner.getSelectedItem().toString().trim().equals("Perorangan")){
