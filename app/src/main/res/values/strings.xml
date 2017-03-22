@@ -106,5 +106,6 @@
     <string name="email_address">Alamat Surei (Email)</string>
     <string name="firstName">Nama Depan</string>
     <string name="lastName">Nama Belakang</string>
-    <string name="date_of_birth">Tanggal lahir</string>
+    <string name="date_of_birth">Tanggal Lahir (dd/mm/yyyy)</string>
+    <string name="resend_activation_code_to_email">Kirim Ulang Kode Aktivasi Ke Email</string>
 </resources>

@@ -2,9 +2,11 @@ package com.grinasia.transport.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.v4.app.FragmentActivity;
 import android.util.Base64;
 import android.util.Log;
 
+import com.grinasia.transport.Fragments.Register_next_after;
 import com.grinasia.transport.Security.AES;
 import com.grinasia.transport.Security.SecretKey;
 
@@ -17,7 +19,7 @@ public class SharedPreferencesUtils {
 
     private String iv;
 
-    public SharedPreferencesUtils(Context context, String preferencesName) {
+    public SharedPreferencesUtils(FragmentActivity context, String preferencesName) {
         sharedPreferences = context.getSharedPreferences(preferencesName, Context.MODE_PRIVATE);
     }
 

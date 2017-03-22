@@ -45,3 +45,12 @@ Java_com_grinasia_transport_Config_BaseConfig_getMerchantReturnUrl(JNIEnv *env, 
 
     return (*env)->NewStringUTF(env, "https://api.grinasia.coms/api/paymentCallback");
 }
+
+JNIEXPORT jstring JNICALL
+Java_com_grinasia_transport_Config_BaseConfig_getCDNBaseUrl(JNIEnv *env, jclass type) {
+
+    // TODO
+
+
+    return (*env)->NewStringUTF(env, "https://static.grinasia.com");
+}

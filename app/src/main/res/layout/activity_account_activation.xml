@@ -34,6 +34,16 @@
         android:maxLength="4"
         android:inputType="numberSigned"/>
 
+    <TextView
+        android:id="@+id/resendActivationCodeToEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/resend_activation_code_to_email"
+        android:textColor="@android:color/holo_blue_light"
+        android:textAlignment="center"/>
+
+
     <Button
         android:id="@+id/btnActivateAccount"
         android:layout_width="match_parent"

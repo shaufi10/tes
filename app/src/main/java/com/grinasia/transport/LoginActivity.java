@@ -83,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                     try {
                         data.put("username", txtUsername.getText().toString());
                         data.put("password", txtPassword.getText().toString());
+                        data.put("loginType", "default");
 
                         signInUser(data);
                     } catch (Exception ex){
@@ -166,16 +167,61 @@ public class LoginActivity extends AppCompatActivity {
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
+                                if ("loginType" == "default") {
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    }
+                                }
+                            })
+                            .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
                                 }
                             })
                             .show();
-                } else {
+                } else if (error.networkResponse.statusCode == 401) {
                     new AlertDialog.Builder(LoginActivity.this)
+                            .setTitle("User Signin")
+                            .setMessage("Username/Password Is Invalid")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            })
+                            .show();
+                } else if (error.networkResponse.statusCode == 406) {
+
+                    String iv = null;
+                    try {
+                        iv = Strings.getHexString(SecretKey.getOriginalSecretKey().getBytes()).substring(0, 16);
+
+                        final byte [] decryptedResponse = AES.decrypt(iv.getBytes(), SecretKey.getOriginalSecretKey().getBytes(), Base64.decode(error.networkResponse.data, Base64.DEFAULT));
+
+                        new AlertDialog.Builder(LoginActivity.this)
                             .setTitle("User Signin")
                             .setMessage("Oopss...Something went wrong, Please Try Again Later")
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
+                                }
+                            })
+                            .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            })
+                            .show();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+            } else {
+                new AlertDialog.Builder(LoginActivity.this)
+                        .setTitle("User Signin")
+                        .setMessage("Oopss...Something went wrong, Please Try Again Later")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
                                 }
                             })
                             .show();

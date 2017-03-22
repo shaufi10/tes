@@ -11,6 +11,8 @@ public class BaseConfig {
 
     public native static String getBaseUrl();
 
+    public native static String getCDNBaseUrl();
+
 //    public native static String getPaymentUrl();
 
 //    public native static String getMerchantCode();

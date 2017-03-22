@@ -12,18 +12,18 @@
         android:fillViewport="false">
 
         <LinearLayout
-            android:layout_height="match_parent"
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtInfo1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
                 android:layout_margin="20dp"
                 android:text="@string/info3"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
                 android:textSize="25sp" />
 
             <LinearLayout
@@ -38,15 +38,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/company"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="15sp" />
 
                 <Spinner
-                    android:id="@+id/spinner1"
+                    android:id="@+id/spn_kind_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="textEnd"
-                    android:entries="@array/list_kind_company" />
+                    android:background="@android:color/white"
+                    android:textAlignment="textEnd" />
 
             </LinearLayout>
 
@@ -59,19 +59,19 @@
                     android:id="@+id/txtInputName_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@android:color/black"
                     android:layout_marginTop="25dp"
+                    android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
+                        android:id="@+id/edName_Company"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/name_company"
-                        android:maxLines="1"
                         android:maxLength="45"
+                        android:maxLines="1"
                         android:singleLine="true"
-                        android:id="@+id/edName_Company"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@android:color/white" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -80,18 +80,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:textColorHint="@android:color/black"
+                    android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
+                        android:id="@+id/edAddress_Company"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/address_company"
                         android:inputType="textMultiLine"
                         android:maxLength="255"
                         android:singleLine="true"
-                        android:textColor="@android:color/white"
-                        android:id="@+id/edAddress_Company" />
+                        android:textColor="@android:color/white" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -100,14 +100,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:textColorHint="@android:color/black"
+                    android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
+                        android:id="@+id/edNumber_telephone_Company"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/phone_company"
-                        android:id="@+id/edNumber_telephone_Company"
                         android:inputType="phone"
                         android:maxLength="15"
                         android:singleLine="true"
@@ -120,26 +120,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:textColorHint="@android:color/black"
+                    android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
+                        android:id="@+id/edNumber_Akte"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/number_akte"
                         android:inputType="text"
-                        android:maxLines="1"
                         android:maxLength="15"
+                        android:maxLines="1"
                         android:singleLine="true"
-                        android:id="@+id/edNumber_Akte"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@android:color/white" />
 
                     <Button
                         android:id="@+id/btn_upload_akte"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:text="@string/upload_file"/>
+                        android:text="@string/upload_file" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -148,25 +148,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:textColorHint="@android:color/black"
+                    android:textColorHint="@android:color/white"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
+                        android:id="@+id/edNumber_SIUP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/number_SIUP"
                         android:inputType="text"
-                        android:singleLine="true"
                         android:maxLength="15"
-                        android:id="@+id/edNumber_SIUP"
-                        android:textColor="@android:color/white"/>
+                        android:singleLine="true"
+                        android:textColor="@android:color/white" />
 
                     <Button
                         android:id="@+id/btn_upload_SIUP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:text="@string/upload_file"/>
+                        android:text="@string/upload_file" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -179,22 +179,22 @@
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
+                        android:id="@+id/edNumber_TDP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/number_TDP"
-                        android:maxLines="1"
-                        android:maxLength="15"
-                        android:singleLine="true"
                         android:inputType="text"
-                        android:textColor="@android:color/white"
-                        android:id="@+id/edNumber_TDP" />
+                        android:maxLength="15"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white" />
 
                     <Button
                         android:id="@+id/btn_upload_TDP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:text="@string/upload_file"/>
+                        android:text="@string/upload_file" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -207,22 +207,22 @@
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
+                        android:id="@+id/edNumber_NPWP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/number_NPWP"
-                        android:maxLines="1"
-                        android:maxLength="15"
-                        android:singleLine="true"
                         android:inputType="text"
-                        android:id="@+id/edNumber_NPWP"
-                        android:textColor="@android:color/white"/>
+                        android:maxLength="15"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white" />
 
                     <Button
                         android:id="@+id/btn_upload_NPWP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:text="@string/upload_file"/>
+                        android:text="@string/upload_file" />
 
                 </android.support.design.widget.TextInputLayout>
 

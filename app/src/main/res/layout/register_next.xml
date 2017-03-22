@@ -108,9 +108,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtDOB"
                     android:hint="@string/date_of_birth"
+                    android:inputType="none"
                     android:singleLine="true"
                     android:editable="false"
-                    android:inputType="none"
                     android:cursorVisible="false"
                     android:textColor="@android:color/white"/>
 
@@ -153,7 +153,7 @@
                     android:singleLine="true"
                     android:textColor="@android:color/white"
                     android:inputType="phone"
-                    android:id="@+id/edSIM_phone"/>
+                    android:id="@+id/edSIM"/>
 
             </android.support.design.widget.TextInputLayout>
 
