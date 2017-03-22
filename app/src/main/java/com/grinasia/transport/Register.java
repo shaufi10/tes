@@ -275,7 +275,7 @@ public class Register  extends AppCompatActivity{
             EditText txtLastname = (EditText) findViewById(R.id.edLastName);
             EditText txtAlamat = (EditText) findViewById(R.id.edAddress);
             EditText txtNumberTelepon = (EditText) findViewById(R.id.edNumber_telephone);
-            EditText txtSIM = (EditText) findViewById(R.id.edSIM_phone);
+            EditText txtSIM = (EditText) findViewById(R.id.edSIM);
 
             if (TextUtils.isEmpty(txtFirstname.getText().toString()) ||
                     TextUtils.isEmpty(txtLastname.getText().toString()) ||
@@ -333,7 +333,7 @@ public class Register  extends AppCompatActivity{
             final EditText txtNumber_TDP = (EditText) findViewById(R.id.edNumber_TDP);
             final EditText txtNumber_NPWP = (EditText) findViewById(R.id.edNumber_NPWP);
 
-            spinner = (Spinner) findViewById(R.id.spinner1);
+            spinner = (Spinner) findViewById(R.id.spn_kind_company);
 
             List<String> list = new ArrayList<>();
             list.add("Perorangan");

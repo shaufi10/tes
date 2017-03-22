@@ -1,16 +1,10 @@
 package com.grinasia.transport.Fragments;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.text.TextUtils;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,32 +15,22 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 
-import com.grinasia.SplashScreenActivity;
 import com.grinasia.transport.Config.BaseConfig;
 import com.grinasia.transport.Custom.UploadProgressRequestBody;
 import com.grinasia.transport.Interface.UserService;
-import com.grinasia.transport.MainActivity;
 import com.grinasia.transport.R;
 import com.grinasia.transport.Security.AES;
 import com.grinasia.transport.Security.SecretKey;
+import com.grinasia.transport.SplashScreenActivity;
 import com.grinasia.transport.Utils.SharedPreferencesUtils;
 import com.grinasia.transport.Utils.Strings;
-import com.squareup.picasso.Picasso;
 
 
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
