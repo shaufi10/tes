@@ -26,7 +26,7 @@
                 android:textSize="25sp"/>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputFirstName"
+                android:id="@+id/txtLayoutFirstName_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -41,13 +41,13 @@
                     android:maxLength="45"
                     android:singleLine="true"
                     android:inputType="textPersonName"
-                    android:id="@+id/edFirstName"
+                    android:id="@+id/txtFirstName_register"
                     android:textColor="@android:color/white" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputLastName"
+                android:id="@+id/txtLayoutLastName_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -62,7 +62,7 @@
                     android:maxLength="45"
                     android:singleLine="true"
                     android:inputType="textPersonName"
-                    android:id="@+id/edLastName"
+                    android:id="@+id/txtLastName_register"
                     android:textColor="@android:color/white" />
 
             </android.support.design.widget.TextInputLayout>
@@ -70,13 +70,13 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/spnGender"
+                android:id="@+id/spnGender1"
                 android:layout_marginTop="25dp"
                 android:padding="13dp"
                 android:background="@android:color/white"/>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputAddress"
+                android:id="@+id/txtLayoutAddress_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -91,7 +91,7 @@
                     android:maxLength="255"
                     android:singleLine="true"
                     android:textColor="@android:color/white"
-                    android:id="@+id/edAddress" />
+                    android:id="@+id/txtAddress_register" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -106,7 +106,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtDOB"
+                    android:id="@+id/txtDOB_register"
                     android:hint="@string/date_of_birth"
                     android:inputType="none"
                     android:singleLine="true"
@@ -117,7 +117,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputPhone"
+                android:id="@+id/txtLayoutPhoneNumber_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -131,13 +131,13 @@
                     android:maxLength="15"
                     android:singleLine="true"
                     android:textColor="@android:color/white"
-                    android:id="@+id/edNumber_telephone"
+                    android:id="@+id/txtNumberPhone_register"
                     android:inputType="phone"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputSIM"
+                android:id="@+id/txtLayoutSIM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -153,12 +153,9 @@
                     android:singleLine="true"
                     android:textColor="@android:color/white"
                     android:inputType="phone"
-                    android:id="@+id/edSIM"/>
+                    android:id="@+id/txtSIM_register"/>
 
             </android.support.design.widget.TextInputLayout>
-
         </LinearLayout>
-
     </ScrollView>
-
 </FrameLayout>

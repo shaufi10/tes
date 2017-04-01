@@ -9,30 +9,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.grinasia.transport.R;
-import com.grinasia.transport.Register;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by coder on 24-Jan-17.
- */
-public class Register_next extends Fragment {
+public class RegisterProfile extends Fragment {
 
-    private EditText txtfirstname;
-    private EditText txtlastname;
+    private EditText txtFirstName;
+    private EditText txtLastName;
     private Spinner  spnGender;
     private EditText txtAddress;
-    private EditText txtdate;
-    private EditText txtphone;
-    private EditText txtSIM;
+    private EditText txtDOB;
+    private EditText txtPhoneNumber;
+    private EditText txtSIM_Number;
 
-    public Register_next() {
+    public RegisterProfile() {
     }
 
     @Override
@@ -40,15 +35,16 @@ public class Register_next extends Fragment {
 
         View view = inflater.inflate(R.layout.register_next, container, false);
 
-        txtfirstname = (EditText) view.findViewById(R.id.edFirstName);
-        txtlastname = (EditText) view.findViewById(R.id.edLastName);
-        spnGender = (Spinner) view.findViewById(R.id.spnGender);
-        txtAddress = (EditText) view.findViewById(R.id.edAddress);
-        txtdate = (EditText) view.findViewById(R.id.txtDOB);
-        txtphone = (EditText) view.findViewById(R.id.edNumber_telephone);
-        txtSIM = (EditText) view.findViewById(R.id.edSIM);
+        txtFirstName = (EditText) view.findViewById(R.id.txtFirstName_register);
+        txtLastName = (EditText) view.findViewById(R.id.txtLastName_register);
+        spnGender = (Spinner) view.findViewById(R.id.spnGender1);
+        txtAddress = (EditText) view.findViewById(R.id.txtAddress_register);
+        txtDOB = (EditText) view.findViewById(R.id.txtDOB_register);
+        txtPhoneNumber = (EditText) view.findViewById(R.id.txtNumberPhone_register);
+        txtSIM_Number = (EditText) view.findViewById(R.id.txtSIM_register);
 
         List<String> gender = new ArrayList<>();
+
         gender.add("Pria");
         gender.add("Wanita");
 
@@ -57,32 +53,32 @@ public class Register_next extends Fragment {
 
         spnGender.setAdapter(genderAdapter);
 
-        txtdate.setOnClickListener(new View.OnClickListener() {
+        txtDOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtdate.setFocusable(true);
+                txtDOB.setFocusable(true);
                 DialogFragment dialogFragment = new DOBFragment();
-                if (!TextUtils.isEmpty(txtdate.getText().toString())) {
+                if (!TextUtils.isEmpty(txtDOB.getText().toString())) {
                     Bundle bundle = new Bundle();
-                    bundle.putString("dob", txtdate.getText().toString());
+                    bundle.putString("dob", txtDOB.getText().toString());
                     dialogFragment.setArguments(bundle);
                 }
-                dialogFragment.setTargetFragment(Register_next.this, 25);
+                dialogFragment.setTargetFragment(RegisterProfile.this, 25);
                 dialogFragment.show(getFragmentManager(), "datePicker");
             }
         });
 
-        txtdate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        txtDOB.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
                     DialogFragment dialogFragment = new DOBFragment();
-                    if (!TextUtils.isEmpty(txtdate.getText().toString())) {
+                    if (!TextUtils.isEmpty(txtDOB.getText().toString())) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("dob", txtdate.getText().toString());
+                        bundle.putString("dob", txtDOB.getText().toString());
                         dialogFragment.setArguments(bundle);
                     }
-                    dialogFragment.setTargetFragment(Register_next.this, 25);
+                    dialogFragment.setTargetFragment(RegisterProfile.this, 25);
                     dialogFragment.show(getFragmentManager(), "datePicker");
                 }
             }
@@ -94,7 +90,7 @@ public class Register_next extends Fragment {
     public void onActivityResult (int requestcode, int resultCode, Intent data) {
         if (requestcode == 25) {
             String dob_formatted = data.getStringExtra("date_selected_dob_formatted");
-            txtdate.setText(dob_formatted);
+            txtDOB.setText(dob_formatted);
         }
     }
 }

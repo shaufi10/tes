@@ -11,7 +11,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsMessage;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +21,7 @@ import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.grinasia.transport.Config.BaseConfig;
 import com.grinasia.transport.Service.VolleyServices;
+import com.grinasia.transport.User.LoginActivity;
 import com.grinasia.transport.Utils.SharedPreferencesUtils;
 import com.grinasia.transport.Utils.VolleyCallback;
 
@@ -29,9 +29,6 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by coder on 24-Jan-17.
- */
 
 public class AccountActivationActivity extends AppCompatActivity {
     private EditText txtActivationCode;

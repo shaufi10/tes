@@ -1,4 +1,4 @@
-package com.grinasia.transport;
+package com.grinasia.transport.User;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -21,12 +21,14 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
+import com.grinasia.transport.AccountActivationActivity;
 import com.grinasia.transport.Adapter.SignupViewPagerAdapter;
 import com.grinasia.transport.Config.BaseConfig;
 import com.grinasia.transport.Fragments.ConfirmTOSFragment;
 import com.grinasia.transport.Fragments.Fragment_Register;
-import com.grinasia.transport.Fragments.Register_next;
-import com.grinasia.transport.Fragments.Register_next_after;
+import com.grinasia.transport.Fragments.RegisterCompany;
+import com.grinasia.transport.Fragments.RegisterProfile;
+import com.grinasia.transport.R;
 import com.grinasia.transport.Service.VolleyServices;
 import com.grinasia.transport.Utils.SharedPreferencesUtils;
 import com.grinasia.transport.Utils.VolleyCallback;
@@ -41,16 +43,14 @@ import java.util.Map;
 
 import static com.grinasia.transport.Utils.ShowErrorLayoutUtils.showValidationErrorMessage;
 
-/**
- * Created by coder on 06-Jan-17.
- */
-public class Register  extends AppCompatActivity{
+
+public class Register extends AppCompatActivity{
 
     private ViewPager signUpViewPager;
     private Button Next, Back, Mulai;
     private Spinner spinner;
 
-    private String wilayah, email, username, password, firstname, lastname, address, phone_number, nomor_sim, name_company,
+    private String wilayah, email, username, password, firstname, lastname, address, dob, phone_number, nomor_sim, name_company,
             address_company, phone_company, number_akte, number_SIUP, number_TDP, number_NPWP;
 
     private VolleyCallback volleyCallback;
@@ -71,7 +71,6 @@ public class Register  extends AppCompatActivity{
 
         signUpViewPager = (ViewPager) findViewById(R.id.signUpView);
         Next = (Button) findViewById(R.id.btn_next);
-//        Back = (Button) findViewById(R.id.btn_back);
         Mulai = (Button) findViewById(R.id.btnstart);
         setUpViewPagerRegister(signUpViewPager);
 
@@ -82,14 +81,9 @@ public class Register  extends AppCompatActivity{
 
             @Override
             public void onPageSelected(int position) {
-                if (position == 0) {
-                    Next.setVisibility(View.VISIBLE);
-                } else if (position == 1) {
-                    Next.setVisibility(View.VISIBLE);
-                } else if (position == 2) {
-                    Next.setVisibility(View.VISIBLE);
-                } else {
-                    Mulai.setVisibility(View.GONE);
+                if (position == 2) {
+                    Next.setVisibility(View.GONE);
+                    Mulai.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -99,25 +93,13 @@ public class Register  extends AppCompatActivity{
         });
 
         Next.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        int position = signUpViewPager.getCurrentItem();
-                                        validateUserInput(position);
-                                    }
-                                }
-        );
-
-            /*Back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (signUpViewPager.getCurrentItem() != 0) {
-                        signUpViewPager.setCurrentItem(signUpViewPager.getCurrentItem() - 1, false);
-                    } else {
-                        finish();
-                    }
+            @Override
+            public void onClick(View v) {
+                int position = signUpViewPager.getCurrentItem();
+                validateUserInput(position);
                 }
             }
-            );*/
+        );
 
         Mulai.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +119,7 @@ public class Register  extends AppCompatActivity{
                         dataUserProfile.put("Nama Depan", firstname);
                         dataUserProfile.put("Nama Belakang", lastname);
                         dataUserProfile.put("Alamat", address);
+                        dataUserProfile.put("date_of_birth", dob);
                         dataUserProfile.put("No. HP", phone_number);
                         dataUserProfile.put("No. SIM", nomor_sim);
 
@@ -160,36 +143,12 @@ public class Register  extends AppCompatActivity{
             }
         });
     }
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // action with ID action_refresh was selected
-            case R.id.btn_back:
-                this.finish();
-                return true;
-            case R.id.btn_next:
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_register, new Fragment_Register());
-                transaction.commit();
-                break;
-            default:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
 
     private void setUpViewPagerRegister(ViewPager viewPager){
         SignupViewPagerAdapter adapter = new SignupViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Fragment_Register());
-        adapter.addFragment(new Register_next());
-        adapter.addFragment(new Register_next_after());
+        adapter.addFragment(new RegisterProfile());
+        adapter.addFragment(new RegisterCompany());
         adapter.addFragment(new ConfirmTOSFragment());
         viewPager.setAdapter(adapter);
     }
@@ -197,11 +156,11 @@ public class Register  extends AppCompatActivity{
     private void validateUserInput(int viewPagerPosition){
         if (viewPagerPosition == 0) {
 
-            TextInputLayout txtLayoutRegion = (TextInputLayout) findViewById(R.id.txtInputKotamadya);
-            TextInputLayout txtLayoutEmail = (TextInputLayout) findViewById(R.id.txtInputEmailAddress);
-            TextInputLayout txtLayoutUsername = (TextInputLayout) findViewById(R.id.txtInputUserName);
-            TextInputLayout txtLayoutPassword = (TextInputLayout) findViewById(R.id.txtInputPassword);
-            TextInputLayout txtLayoutConfirmPassword = (TextInputLayout) findViewById(R.id.txtInputConfirmPassword);
+            TextInputLayout txtLayoutRegion = (TextInputLayout) findViewById(R.id.txtLayoutRegion_profile);
+            TextInputLayout txtLayoutEmail = (TextInputLayout) findViewById(R.id.txtLayoutEmailAddress);
+            TextInputLayout txtLayoutUsername = (TextInputLayout) findViewById(R.id.txtLayoutUserName);
+            TextInputLayout txtLayoutPassword = (TextInputLayout) findViewById(R.id.txtLayoutPassword);
+            TextInputLayout txtLayoutConfirmPassword = (TextInputLayout) findViewById(R.id.txtLayoutConfirmPassword);
 
             txtLayoutRegion.setErrorEnabled(false);
             txtLayoutEmail.setErrorEnabled(false);
@@ -209,17 +168,17 @@ public class Register  extends AppCompatActivity{
             txtLayoutPassword.setErrorEnabled(false);
             txtLayoutConfirmPassword.setErrorEnabled(false);
 
-            EditText txtRegion = (EditText) findViewById(R.id.edKotamadya);
-            EditText txtEmail = (EditText) findViewById(R.id.edEmailAddress);
-            EditText txtUser = (EditText) findViewById(R.id.edUser);
-            EditText txtPassword = (EditText) findViewById(R.id.edPassword);
-            EditText txtConfirmPassword = (EditText) findViewById(R.id.edConfirmPassword);
+            EditText txtRegion = (EditText) findViewById(R.id.txtRegion_profile);
+            EditText txtEmail = (EditText) findViewById(R.id.txtEmailAddress_register);
+            EditText txtUser = (EditText) findViewById(R.id.txtUsername);
+            EditText txtPassword = (EditText) findViewById(R.id.txtPassword);
+            EditText txtConfirm_Password = (EditText) findViewById(R.id.txtConfirmPassword);
 
             if (TextUtils.isEmpty(txtRegion.getText().toString()) ||
                     TextUtils.isEmpty(txtEmail.getText().toString()) ||
                     TextUtils.isEmpty(txtUser.getText().toString()) ||
                     TextUtils.isEmpty(txtPassword.getText().toString())
-                    || TextUtils.isEmpty(txtConfirmPassword.getText().toString())){
+                    || TextUtils.isEmpty(txtConfirm_Password.getText().toString())){
                 if (TextUtils.isEmpty(txtRegion.getText().toString())) {
                     showValidationErrorMessage(txtLayoutRegion, txtRegion, "Region is required");
                 }
@@ -233,15 +192,15 @@ public class Register  extends AppCompatActivity{
                     showValidationErrorMessage(txtLayoutPassword, txtPassword, "Password is required");
                 }
 
-                if (TextUtils.isEmpty(txtConfirmPassword.getText().toString())){
-                    showValidationErrorMessage(txtLayoutConfirmPassword, txtConfirmPassword, "Please confirm your password");
+                if (TextUtils.isEmpty(txtConfirm_Password.getText().toString())){
+                    showValidationErrorMessage(txtLayoutConfirmPassword, txtConfirm_Password, "Please confirm your password");
                 }
 
                 return;
             } else {
 
-                if (!TextUtils.equals(txtPassword.getText().toString(), txtConfirmPassword.getText().toString())){
-                    showValidationErrorMessage(txtLayoutConfirmPassword, txtConfirmPassword, "Password do not match");
+                if (!TextUtils.equals(txtPassword.getText().toString(), txtConfirm_Password.getText().toString())){
+                    showValidationErrorMessage(txtLayoutConfirmPassword, txtConfirm_Password, "Password do not match");
                     return;
                 } else {
                     if (txtPassword.getText().toString().length() < 6){
@@ -259,42 +218,54 @@ public class Register  extends AppCompatActivity{
             signUpViewPager.setCurrentItem(viewPagerPosition + 1);
         } else if (viewPagerPosition == 1) {
 
-            TextInputLayout txtLayoutFirstName = (TextInputLayout) findViewById(R.id.txtInputFirstName);
-            TextInputLayout txtLayoutLastName = (TextInputLayout) findViewById(R.id.txtInputLastName);
-            TextInputLayout txtLayoutAlamat = (TextInputLayout) findViewById(R.id.txtInputAddress);
-            TextInputLayout txtLayoutNomor = (TextInputLayout) findViewById(R.id.txtInputPhone);
-            TextInputLayout txtLayoutSIM = (TextInputLayout) findViewById(R.id.txtInputSIM);
+            TextInputLayout txtLayoutFirstName = (TextInputLayout) findViewById(R.id.txtLayoutFirstName_profile);
+            TextInputLayout txtLayoutLastName = (TextInputLayout) findViewById(R.id.txtLayoutLastName_profile);
+            TextInputLayout txtLayoutAlamat = (TextInputLayout) findViewById(R.id.txtLayoutAddress_profile);
+            TextInputLayout txtLayoutDOB = (TextInputLayout) findViewById(R.id.TextLayoutDOB);
+            TextInputLayout txtLayoutNomor = (TextInputLayout) findViewById(R.id.txtLayoutPhoneNumber_profile);
+            TextInputLayout txtLayoutSIM = (TextInputLayout) findViewById(R.id.txtLayoutSIM);
 
             txtLayoutFirstName.setErrorEnabled(false);
             txtLayoutLastName.setErrorEnabled(false);
             txtLayoutAlamat.setErrorEnabled(false);
+            txtLayoutDOB.setEnabled(false);
             txtLayoutNomor.setErrorEnabled(false);
             txtLayoutSIM.setErrorEnabled(false);
 
-            EditText txtFirstname = (EditText) findViewById(R.id.edFirstName);
-            EditText txtLastname = (EditText) findViewById(R.id.edLastName);
-            EditText txtAlamat = (EditText) findViewById(R.id.edAddress);
-            EditText txtNumberTelepon = (EditText) findViewById(R.id.edNumber_telephone);
-            EditText txtSIM = (EditText) findViewById(R.id.edSIM);
+            EditText txtFirstName = (EditText) findViewById(R.id.txtFirstName_register);
+            EditText txtLastName = (EditText) findViewById(R.id.txtLastName_register);
+            EditText txtAddress = (EditText) findViewById(R.id.txtAddress_register);
+            EditText txtDOB = (EditText) findViewById(R.id.txtDOB_register);
+            EditText txtPhoneNumber = (EditText) findViewById(R.id.txtNumberPhone_register);
+            EditText txtSIM = (EditText) findViewById(R.id.txtSIM_register);
 
-            if (TextUtils.isEmpty(txtFirstname.getText().toString()) ||
-                    TextUtils.isEmpty(txtLastname.getText().toString()) ||
-                    TextUtils.isEmpty(txtAlamat.getText().toString())
-                    || TextUtils.isEmpty(txtNumberTelepon.getText().toString())
+            if (TextUtils.isEmpty(txtFirstName.getText().toString()) ||
+                    TextUtils.isEmpty(txtLastName.getText().toString()) ||
+                    TextUtils.isEmpty(txtAddress.getText().toString())||
+                    TextUtils.isEmpty(txtDOB.getText().toString())
+                    || TextUtils.isEmpty(txtPhoneNumber.getText().toString())
                     || TextUtils.isEmpty(txtSIM.getText().toString())){
 
-                if (TextUtils.isEmpty(txtFirstname.getText().toString())){
-                    showValidationErrorMessage(txtLayoutFirstName, txtFirstname, "First Name is required");
+                if (TextUtils.isEmpty(txtFirstName.getText().toString())){
+                    showValidationErrorMessage(txtLayoutFirstName, txtFirstName, "First Name is required");
                 }
-                if (TextUtils.isEmpty(txtLastname.getText().toString())){
-                    showValidationErrorMessage(txtLayoutLastName, txtLastname, "Last Name is required");
+
+                if (TextUtils.isEmpty(txtLastName.getText().toString())){
+                    showValidationErrorMessage(txtLayoutLastName, txtLastName, "Last Name is required");
                 }
-                if (TextUtils.isEmpty(txtAlamat.getText().toString())){
-                    showValidationErrorMessage(txtLayoutAlamat, txtAlamat, "Address is required");
+
+                if (TextUtils.isEmpty(txtAddress.getText().toString())){
+                    showValidationErrorMessage(txtLayoutAlamat, txtAddress, "Address is required");
                 }
-                if (TextUtils.isEmpty(txtNumberTelepon.getText().toString())){
-                    showValidationErrorMessage(txtLayoutNomor, txtNumberTelepon, "Number Telephone is required");
+
+                if (TextUtils.isEmpty(txtDOB.getText().toString())){
+                    showValidationErrorMessage(txtLayoutDOB, txtDOB, "Date Of Birth is required");
                 }
+
+                if (TextUtils.isEmpty(txtPhoneNumber.getText().toString())){
+                    showValidationErrorMessage(txtLayoutNomor, txtPhoneNumber, "Number Telephone is required");
+                }
+
                 if (TextUtils.isEmpty(txtSIM.getText().toString())){
                     showValidationErrorMessage(txtLayoutSIM, txtSIM, "SIM Number is required");
                 }
@@ -305,13 +276,13 @@ public class Register  extends AppCompatActivity{
 
             signUpViewPager.setCurrentItem(viewPagerPosition + 1);
                 } else if (viewPagerPosition == 2){
-                final TextInputLayout txtLayoutName_Company = (TextInputLayout) findViewById(R.id.txtInputName_company);
-                TextInputLayout txtLayoutAddress_Company = (TextInputLayout) findViewById(R.id.txtInputAddress_company);
-                TextInputLayout txtLayoutNumber_Company = (TextInputLayout) findViewById(R.id.txtInputPhone_company);
-                TextInputLayout txtLayoutNumberAkte = (TextInputLayout) findViewById(R.id.txtInputNumber_Akte);
-                TextInputLayout txtLayoutNumberSIUP = (TextInputLayout) findViewById(R.id.txtInputNumberSIUP);
-                TextInputLayout txtLayoutNumberTDP = (TextInputLayout) findViewById(R.id.txtInputNumberTDP);
-                TextInputLayout txtLayoutNumberNPWP = (TextInputLayout) findViewById(R.id.txtInputNumberNPWP);
+                final TextInputLayout txtLayoutName_Company = (TextInputLayout) findViewById(R.id.txtLayoutName_Company);
+                TextInputLayout txtLayoutAddress_Company = (TextInputLayout) findViewById(R.id.txtLayoutAddress_Company);
+                TextInputLayout txtLayoutNumber_Company = (TextInputLayout) findViewById(R.id.txtLayoutPhoneNumber_Company);
+                TextInputLayout txtLayoutNumberAkte = (TextInputLayout) findViewById(R.id.txtLayoutAkte);
+                TextInputLayout txtLayoutNumberSIUP = (TextInputLayout) findViewById(R.id.txtLayoutNumberSIUP);
+                TextInputLayout txtLayoutNumberTDP = (TextInputLayout) findViewById(R.id.txtLayoutNumberTDP);
+                TextInputLayout txtLayoutNumberNPWP = (TextInputLayout) findViewById(R.id.txtLayoutNumberNPWP);
 
                 txtLayoutName_Company.setErrorEnabled(false);
                 txtLayoutAddress_Company.setErrorEnabled(false);
@@ -321,13 +292,13 @@ public class Register  extends AppCompatActivity{
                 txtLayoutNumberTDP.setErrorEnabled(false);
                 txtLayoutNumberNPWP.setErrorEnabled(false);
 
-                final EditText txtNama_Company = (EditText) findViewById(R.id.edName_Company);
-                final EditText txtAlamat_Company = (EditText) findViewById(R.id.edAddress_Company);
-                final EditText txtTelepon_Company= (EditText) findViewById(R.id.edNumber_telephone);
-                final EditText txtNumber_Akte = (EditText) findViewById(R.id.edNumber_Akte);
-                final EditText txtNumber_SIUP = (EditText) findViewById(R.id.edNumber_SIUP);
-                final EditText txtNumber_TDP = (EditText) findViewById(R.id.edNumber_TDP);
-                final EditText txtNumber_NPWP = (EditText) findViewById(R.id.edNumber_NPWP);
+                final EditText txtNama_Company = (EditText) findViewById(R.id.txtName_Company);
+                final EditText txtAlamat_Company = (EditText) findViewById(R.id.txtAddress_Company);
+                final EditText txtTelepon_Company= (EditText) findViewById(R.id.txtPhoneNumber_Company);
+                final EditText txtNumber_Akte = (EditText) findViewById(R.id.txtNumber_Akte);
+                final EditText txtNumber_SIUP = (EditText) findViewById(R.id.txtNumber_SIUP);
+                final EditText txtNumber_TDP = (EditText) findViewById(R.id.txtNumber_TDP);
+                final EditText txtNumber_NPWP = (EditText) findViewById(R.id.txtNumber_NPWP);
 
                 spinner = (Spinner) findViewById(R.id.spn_kind_company);
 

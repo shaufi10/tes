@@ -3,10 +3,6 @@ package com.grinasia.transport.Custom;
 import android.os.Looper;
 
 import android.os.Handler;
-import android.os.Looper;
-import android.support.v4.app.FragmentActivity;
-
-import com.grinasia.transport.Fragments.Register_next_after;
 
 import java.io.File;
 import java.io.FileInputStream;

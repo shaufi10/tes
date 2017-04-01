@@ -1,4 +1,4 @@
-package com.grinasia.transport;
+package com.grinasia.transport.User;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -18,6 +18,8 @@ import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.grinasia.transport.Config.BaseConfig;
+import com.grinasia.transport.MainActivity;
+import com.grinasia.transport.R;
 import com.grinasia.transport.Security.AES;
 import com.grinasia.transport.Security.SecretKey;
 import com.grinasia.transport.Service.VolleyServices;
@@ -59,11 +61,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        txtLayoutLoginUsername = (TextInputLayout)findViewById(R.id.layoutUsername);
-        txtLayoutLoginPassword = (TextInputLayout)findViewById(R.id.layoutPassword);
+        txtLayoutLoginUsername = (TextInputLayout)findViewById(R.id.txtLayoutUsername);
+        txtLayoutLoginPassword = (TextInputLayout)findViewById(R.id.txtLayoutLoginPassword);
 
-        txtUsername = (EditText)findViewById(R.id.loginUsername);
-        txtPassword = (EditText)findViewById(R.id.loginPassword);
+        txtUsername = (EditText)findViewById(R.id.txtLoginPassword);
+        txtPassword = (EditText)findViewById(R.id.txtLoginPassword);
 
         btnLogin = (Button)findViewById(R.id.btnSignIn);
         txtSignUp = (TextView)findViewById(R.id.txtSignUp);

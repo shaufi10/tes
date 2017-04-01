@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/fragment_register"
     android:fitsSystemWindows="true"
-    tools:context="com.grinasia.transport.Register">
+    tools:context="com.grinasia.transport.User.Register">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:textSize="25sp" />
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputKotamadya"
+                android:id="@+id/txtLayoutRegion_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -44,13 +44,13 @@
                     android:maxLength="255"
                     android:singleLine="true"
                     android:inputType="text"
-                    android:id="@+id/edKotamadya"
+                    android:id="@+id/txtRegion_profile"
                     android:textColor="@android:color/white" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputEmailAddress"
+                android:id="@+id/txtLayoutEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -64,13 +64,13 @@
                     android:maxLength="255"
                     android:singleLine="true"
                     android:inputType="textEmailAddress"
-                    android:id="@+id/edEmailAddress"
+                    android:id="@+id/txtEmailAddress_register"
                     android:textColor="@android:color/white" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputUserName"
+                android:id="@+id/txtLayoutUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -84,13 +84,13 @@
                     android:maxLines="1"
                     android:maxLength="45"
                     android:singleLine="true"
-                    android:id="@+id/edUser"
+                    android:id="@+id/txtUsername"
                     android:textColor="@android:color/white" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputPassword"
+                android:id="@+id/txtLayoutPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -105,13 +105,13 @@
                     android:maxLength="255"
                     android:singleLine="true"
                     android:inputType="textPassword"
-                    android:id="@+id/edPassword"
+                    android:id="@+id/txtPassword"
                     android:textColor="@android:color/white"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtInputConfirmPassword"
+                android:id="@+id/txtLayoutConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -125,7 +125,7 @@
                     android:maxLines="1"
                     android:maxLength="255"
                     android:singleLine="true"
-                    android:id="@+id/edConfirmPassword"
+                    android:id="@+id/txtConfirmPassword"
                     android:inputType="textPassword"
                     android:textColor="@android:color/white"/>
 

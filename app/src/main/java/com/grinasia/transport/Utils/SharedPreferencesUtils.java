@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Base64;
 import android.util.Log;
 
-import com.grinasia.transport.Fragments.Register_next_after;
 import com.grinasia.transport.Security.AES;
 import com.grinasia.transport.Security.SecretKey;
 

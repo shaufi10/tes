@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragment_register_2"
-    tools:context="com.grinasia.transport.Register">
+    tools:context="com.grinasia.transport.User.Register">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                 android:orientation="vertical">
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txtInputName_company"
+                    android:id="@+id/txtLayoutName_Company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
@@ -64,7 +64,7 @@
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
-                        android:id="@+id/edName_Company"
+                        android:id="@+id/txtName_Company"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/name_company"
@@ -76,7 +76,7 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txtInputAddress_company"
+                    android:id="@+id/txtLayoutAddress_Company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
@@ -84,7 +84,7 @@
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
-                        android:id="@+id/edAddress_Company"
+                        android:id="@+id/txtAddress_Company"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/address_company"
@@ -96,7 +96,7 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txtInputPhone_company"
+                    android:id="@+id/txtLayoutPhoneNumber_Company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
@@ -104,7 +104,7 @@
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
-                        android:id="@+id/edNumber_telephone_Company"
+                        android:id="@+id/txtPhoneNumber_Company"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/phone_company"
@@ -116,7 +116,7 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txtInputNumber_Akte"
+                    android:id="@+id/txtLayoutAkte"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
@@ -124,7 +124,7 @@
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
-                        android:id="@+id/edNumber_Akte"
+                        android:id="@+id/txtNumber_Akte"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/number_akte"
@@ -144,7 +144,7 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txtInputNumberSIUP"
+                    android:id="@+id/txtLayoutNumberSIUP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
@@ -152,7 +152,7 @@
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
-                        android:id="@+id/edNumber_SIUP"
+                        android:id="@+id/txtNumber_SIUP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/number_SIUP"
@@ -171,7 +171,7 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txtInputNumberTDP"
+                    android:id="@+id/txtLayoutNumberTDP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
@@ -179,7 +179,7 @@
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
-                        android:id="@+id/edNumber_TDP"
+                        android:id="@+id/txtNumber_TDP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/number_TDP"
@@ -199,7 +199,7 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txtInputNumberNPWP"
+                    android:id="@+id/txtLayoutNumberNPWP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
@@ -207,7 +207,7 @@
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse">
 
                     <EditText
-                        android:id="@+id/edNumber_NPWP"
+                        android:id="@+id/txtNumber_NPWP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/number_NPWP"

@@ -12,7 +12,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.grinasia.transport.LoginActivity;
+import com.grinasia.transport.User.LoginActivity;
 import com.grinasia.transport.R;
 
 /**

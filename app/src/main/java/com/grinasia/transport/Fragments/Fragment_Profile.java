@@ -27,14 +27,6 @@ public class Fragment_Profile extends Fragment {
 
         context = view.getContext();
 
-        final FloatingActionButton floating = (FloatingActionButton) view.findViewById(R.id.fab1);
-        floating.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Intent a = new Intent(context, )
-                //startActivity(a);
-            }
-        });
 
         return view;
     }

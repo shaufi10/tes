@@ -3,6 +3,8 @@
     package="com.grinasia.transport">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
@@ -11,18 +13,18 @@
         android:label=""
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name="com.grinasia.transport.LoginActivity">
+        <activity android:name="com.grinasia.transport.User.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.grinasia.transport.Register"></activity>
+        <activity android:name="com.grinasia.transport.User.Register"></activity>
         <activity android:name="com.grinasia.transport.AccountActivationActivity"></activity>
         <activity android:name="com.grinasia.transport.MainActivity"></activity>
         <activity android:name="com.grinasia.transport.Detail_Order_Aktif"></activity>
-        <activity android:name="com.grinasia.transport.EditProfile"></activity>
+        <activity android:name="com.grinasia.transport.User.EditProfile"></activity>
     </application>
 
 </manifest>
