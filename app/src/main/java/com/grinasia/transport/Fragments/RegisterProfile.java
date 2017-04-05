@@ -55,7 +55,7 @@ public class RegisterProfile extends Fragment {
 
         spnGender.setAdapter(genderAdapter);
 
-        SimpleDateFormat dobParseAndroid = new SimpleDateFormat("yyyy-MM-dd");
+        
 
         txtDOB.setOnClickListener(new View.OnClickListener() {
             @Override
