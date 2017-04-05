@@ -11,21 +11,17 @@ import android.util.Log;
 import android.widget.DatePicker;
 
 import com.grinasia.transport.Interface.SendDOBResults;
-import com.grinasia.transport.Utils.Strings;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-/**
- * Created by dark_coder on 3/17/2017.
- */
 
-public class DOBFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+public class DOBPickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
     private SendDOBResults sendDOBResults;
 
     @Override
     public void onAttach(Activity activity) {
-        if(getTargetFragment() == null) {
+        if (getTargetFragment() == null) {
             sendDOBResults = (SendDOBResults) activity;
         }
 
@@ -34,48 +30,52 @@ public class DOBFragment extends DialogFragment implements DatePickerDialog.OnDa
 
     @NonNull
     @Override
-    public Dialog onCreateDialog(Bundle SavedInstanceState) {
-        final  Calendar cc = Calendar.getInstance();
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        final Calendar c = Calendar.getInstance();
 
         if (getArguments() != null && getArguments().containsKey("dob")) {
             try {
                 SimpleDateFormat dobParseAndroid = new SimpleDateFormat("yyyy-MM-dd");
                 String date = getArguments().getString("dob");
-                cc.setTime(dobParseAndroid.parse(date));
-            } catch (ParseException e){
-                e.printStackTrace();
+                c.setTime(dobParseAndroid.parse(date));
+            } catch (ParseException ex) {
+                ex.printStackTrace();
             }
         }
-        int year = cc.get(Calendar.YEAR);
-        int month = cc.get(Calendar.MONTH);
-        int day = cc.get(Calendar.DAY_OF_MONTH);
+
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
 
         DatePickerDialog dialog = new DatePickerDialog(getActivity(), this, year, month, day);
 
+        // Create a new instance of DatePickerDialog and return it
         return dialog;
     }
 
     @Override
-    public void onDateSet (DatePicker view, int year, int month, int dayOfMonth){
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         Intent intent = new Intent();
 
-        SimpleDateFormat parseSelectedDate = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat parseSelectedDate = new SimpleDateFormat("yyyy-M-dd");
         SimpleDateFormat newFormatSelectedDate = new SimpleDateFormat("yyyy-MM-dd");
 
         String selected_date = year + "-" + String.valueOf(month + 1) + "-" + dayOfMonth;
+
         try {
-            intent.putExtra("data selected dob formatted", newFormatSelectedDate.format(parseSelectedDate.parse(selected_date)));
-            if (getTargetFragment() != null) {
+            intent.putExtra("date_selected_dob_formatted", newFormatSelectedDate.format(parseSelectedDate.parse(selected_date)));
+            if (getTargetFragment() != null){
                 getTargetFragment().onActivityResult(getTargetRequestCode(), 25, intent);
-            }else {
+            } else {
                 sendDOBResults.sendResults(25, intent);
             }
-        } catch (ParseException e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
+
     @Override
-    public void onDetach(){
+    public void onDetach() {
         sendDOBResults = null;
         super.onDetach();
     }

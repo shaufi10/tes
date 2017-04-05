@@ -14,6 +14,7 @@ import android.widget.Spinner;
 
 import com.grinasia.transport.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class RegisterProfile extends Fragment {
     private EditText txtFirstName;
     private EditText txtLastName;
     private Spinner  spnGender;
+
     private EditText txtAddress;
     private EditText txtDOB;
     private EditText txtPhoneNumber;
@@ -53,18 +55,20 @@ public class RegisterProfile extends Fragment {
 
         spnGender.setAdapter(genderAdapter);
 
+        SimpleDateFormat dobParseAndroid = new SimpleDateFormat("yyyy-MM-dd");
+
         txtDOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 txtDOB.setFocusable(true);
-                DialogFragment dialogFragment = new DOBFragment();
+                DialogFragment dateFragment = new DOBPickerFragment();
                 if (!TextUtils.isEmpty(txtDOB.getText().toString())) {
                     Bundle bundle = new Bundle();
                     bundle.putString("dob", txtDOB.getText().toString());
-                    dialogFragment.setArguments(bundle);
+                    dateFragment.setArguments(bundle);
                 }
-                dialogFragment.setTargetFragment(RegisterProfile.this, 25);
-                dialogFragment.show(getFragmentManager(), "datePicker");
+                dateFragment.setTargetFragment(RegisterProfile.this, 25);
+                dateFragment.show(getFragmentManager(), "datePicker");
             }
         });
 
@@ -72,14 +76,14 @@ public class RegisterProfile extends Fragment {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
-                    DialogFragment dialogFragment = new DOBFragment();
+                    DialogFragment dateFragment = new DOBPickerFragment();
                     if (!TextUtils.isEmpty(txtDOB.getText().toString())) {
                         Bundle bundle = new Bundle();
                         bundle.putString("dob", txtDOB.getText().toString());
-                        dialogFragment.setArguments(bundle);
+                        dateFragment.setArguments(bundle);
                     }
-                    dialogFragment.setTargetFragment(RegisterProfile.this, 25);
-                    dialogFragment.show(getFragmentManager(), "datePicker");
+                    dateFragment.setTargetFragment(RegisterProfile.this, 25);
+                    dateFragment.show(getFragmentManager(), "datePicker");
                 }
             }
         });
